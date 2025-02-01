@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Stephany ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: radial-gradient(circle, #1a1a2e, #000);
+            font-family: 'Georgia', serif;
+            color: #ffdd99;
+            text-shadow: 2px 2px 6px rgba(255, 221, 153, 0.8);
+            text-align: center;
+            padding: 20px;
+        }
+        .mensaje {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 80%;
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        p {
+            font-size: 1.5em;
+        }
+        .estrella {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background-color: white;
+            border-radius: 50%;
+            animation: parpadear 2s infinite alternate;
+        }
+        @keyframes parpadear {
+            0% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+        .flores {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .flor {
+            width: 80px;
+            height: 80px;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div class="mensaje">
+        <h1>Mi querida Stephy ❤️</h1>
+        <p>Es un encanto el haberte conocido, agradezco al universo por llegar de manera tan genuina, te agradezco a ti por permitirme ser parte de tu vida y gracias por darme la oportunidad de conocerte.</p>
+        <p>Me encantas en todos los sentidos, desde tus hermosos ojos hasta tus lunares que parecen estrellas, cada momento a tu lado lo guardo con mucho cariño en mi corazón.</p>
+        <p>Te quiero mucho y te quiero pedir:</p>
+        <h2>Mi corazón hermoso, ¿Puedo ser tu Valentín? ❤️</h2>
+    </div>
+    <div class="flores">
+        <div class="flor" style="background-image: url('https://cdn.pixabay.com/photo/2017/10/31/09/03/sunflower-2901360_1280.png');"></div>
+        <div class="flor" style="background-image: url('https://cdn.pixabay.com/photo/2017/10/31/09/03/sunflower-2901360_1280.png');"></div>
+        <div class="flor" style="background-image: url('https://cdn.pixabay.com/photo/2017/10/31/09/03/sunflower-2901360_1280.png');"></div>
+        <div class="flor" style="background-image: url('https://cdn.pixabay.com/photo/2017/10/31/09/03/sunflower-2901360_1280.png');"></div>
+    </div>
+    <script>
+        function crearEstrellas() {
+            for (let i = 0; i < 200; i++) {
+                let estrella = document.createElement("div");
+                estrella.classList.add("estrella");
+                estrella.style.left = Math.random() * window.innerWidth + "px";
+                estrella.style.top = Math.random() * window.innerHeight * 0.9 + "px";
+                estrella.style.animationDuration = (Math.random() * 2 + 1) + "s";
+                document.body.appendChild(estrella);
+            }
+        }
+        crearEstrellas();
+    </script>
+</body>
+</html>
