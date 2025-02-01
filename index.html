@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Stephany ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: radial-gradient(circle, #1a1a2e, #000);
+            font-family: 'Georgia', serif;
+            color: #ffdd99;
+            text-shadow: 2px 2px 6px rgba(255, 221, 153, 0.8);
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+        .mensaje {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 80%;
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        p {
+            font-size: 1.5em;
+        }
+        /* Estrellas */
+        .estrella {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background-color: white;
+            border-radius: 50%;
+            animation: parpadear 2s infinite alternate;
+        }
+        @keyframes parpadear {
+            0% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+
+        /* Destellos */
+        .destello {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: white;
+            border-radius: 50%;
+            animation: destellar 1.5s infinite ease-in-out;
+        }
+
+        @keyframes destellar {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        /* Gatos estáticos pero girando */
+        .gato {
+            position: absolute;
+            font-size: 3em;
+            animation: girarGato 4s infinite linear;
+        }
+
+        @keyframes girarGato {
+            0% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(90deg);
+            }
+            50% {
+                transform: rotate(180deg);
+            }
+            75% {
+                transform: rotate(270deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="mensaje">
+        <h1>Mi querida Stephy ❤️</h1>
+        <p>Es un encanto el haberte conocido, agradezco al universo por llegar de manera tan genuina, te agradezco a ti por permitirme ser parte de tu vida y gracias por darme la oportunidad de conocerte.</p>
+        <p>Me encantas en todos los sentidos, desde tus hermosos ojos hasta tus lunares que parecen estrellas, cada momento a tu lado lo guardo con mucho cariño en mi corazón.</p>
+        <p>Te quiero mucho y te quiero pedir:</p>
+        <h2>Mi corazón hermoso, ¿Puedo ser tu Valentín? ❤️</h2>
+    </div>
+
+    <script>
+        // Crear 300 estrellas
+        function crearEstrellas() {
+            for (let i = 0; i < 300; i++) {
+                let estrella = document.createElement("div");
+                estrella.classList.add("estrella");
+                estrella.style.left = Math.random() * window.innerWidth + "px";
+                estrella.style.top = Math.random() * window.innerHeight * 0.9 + "px";
+                estrella.style.animationDuration = (Math.random() * 2 + 1) + "s";
+                document.body.appendChild(estrella);
+            }
+        }
+
+        // Crear destellos
+        function crearDestellos() {
+            for (let i = 0; i < 100; i++) {
+                let destello = document.createElement("div");
+                destello.classList.add("destello");
+                destello.style.left = Math.random() * window.innerWidth + "px";
+                destello.style.top = Math.random() * window.innerHeight * 0.9 + "px";
+                destello.style.animationDuration = (Math.random() * 1 + 1) + "s";
+                document.body.appendChild(destello);
+            }
+        }
+
+        // Crear gatos estáticos pero girando
+        function crearGatos() {
+            const posiciones = [
+                { top: "10%", left: "10%" },
+                { top: "20%", left: "90%" },
+                { top: "80%", left: "15%" },
+                { top: "70%", left: "80%" },
+                { top: "15%", left: "50%" }
+            ];
+            
+            for (let i = 0; i < 5; i++) { // Número de gatos
+                let gato = document.createElement("div");
+                gato.classList.add("gato");
+                gato.textContent = "🐱"; // Emoji del gato
+                gato.style.top = posiciones[i].top;
+                gato.style.left = posiciones[i].left;
+                document.body.appendChild(gato);
+            }
+        }
+
+        // Llamamos a las funciones para crear los elementos
+        crearEstrellas();
+        crearDestellos();
+        crearGatos();
+    </script>
+</body>
+</html>
