@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Stephany ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffcccc;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .mensaje {
+            position: absolute;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 15px;
+            z-index: 10;
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        p {
+            font-size: 1.5em;
+        }
+        .animado {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-size: cover;
+            animation: flotar 5s infinite linear;
+        }
+        @keyframes flotar {
+            0% { transform: translateY(100vh) translateX(0); opacity: 1; }
+            100% { transform: translateY(-10vh) translateX(30px); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="mensaje">
+        <h1>Para mi querida Stephany ❤️</h1>
+        <p>Eres la luz que ilumina mi mundo, <br> la flor más hermosa en mi jardín. 🌸</p>
+        <p>Te quiero corazón. 💖</p>
+    </div>
+    <script>
+        function crearElemento(tipo, imagen) {
+            let elemento = document.createElement("div");
+            elemento.classList.add("animado");
+            elemento.style.backgroundImage = `url(${imagen})`;
+            elemento.style.left = Math.random() * window.innerWidth + "px";
+            elemento.style.animationDuration = (Math.random() * 3 + 2) + "s";
+            document.body.appendChild(elemento);
+            setTimeout(() => elemento.remove(), 5000);
+        }
+        function generarAnimaciones() {
+            let imagenes = [
+                "https://cdn-icons-png.flaticon.com/512/833/833472.png",  // Corazón
+                "https://cdn-icons-png.flaticon.com/512/2913/2913973.png"   // Flor
+            ];
+            setInterval(() => crearElemento("div", imagenes[Math.floor(Math.random() * imagenes.length)]), 500);
+        }
+        generarAnimaciones();
+    </script>
+</body>
+</html>
